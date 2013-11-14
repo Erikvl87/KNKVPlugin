@@ -31,7 +31,20 @@ namespace KNKVPlugin
 			queryString["t_id"] = "";
 			queryString["p"] = "0";
 			queryString["full"] = "0";
-			return JsonConvert.DeserializeObject<Teams>(Execute(queryString));
+
+			var response = Execute(queryString);
+
+			try
+			{
+				var jObject = JsonConvert.DeserializeObject<Teams>(response);
+				return jObject;
+			}
+			catch (JsonReaderException e)
+			{
+				// No valid JSON was recieved. Throw the ugly html error that the service is returning.
+				throw new ApplicationException(response);
+			}
+			
 		}
 
 
