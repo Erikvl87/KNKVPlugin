@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Net;
@@ -6,19 +7,17 @@ using System.Text;
 using System.Web;
 using KNKVPlugin.DataTypes;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace KNKVPlugin
 {
 	public class Request
 	{
-		private readonly WebRequest _request;
+		private readonly String _serviceUrl;
 
 		public Request(string code)
 		{
-			var serviceUrl = String.Format("http://www.knkv.nl/kcp/{0}/json/", code);
-			_request = WebRequest.Create(serviceUrl);
-			_request.ContentType = "application/x-www-form-urlencoded";
-			_request.Method = WebRequestMethods.Http.Post;
+			_serviceUrl = String.Format("http://www.knkv.nl/kcp/{0}/json/", code);
 		}
 
 
@@ -36,23 +35,55 @@ namespace KNKVPlugin
 
 			try
 			{
-				var jObject = JsonConvert.DeserializeObject<Teams>(response);
-				return jObject;
+				var teams = JsonConvert.DeserializeObject<Teams>(response);
+				return teams;
 			}
 			catch (JsonReaderException e)
 			{
 				// No valid JSON was recieved. Throw the ugly html error that the service is returning.
-				throw new ApplicationException(response);
+				throw new ApplicationException(response, e);
 			}
-			
+		}
+
+
+		public Results GetResults()
+		{
+			var queryString = HttpUtility.ParseQueryString(String.Empty);
+			queryString["file"] = "json";
+			queryString["f"] = "get_data";
+			queryString["t"] = "result";
+			queryString["t_id"] = "";
+			queryString["p"] = "0";
+			queryString["full"] = "0";
+
+			var response = Execute(queryString);
+			try
+			{
+				var jResponse = JObject.Parse(response);
+				var results = new Results {Weeks = new List<Week>()};
+
+				foreach (var row in jResponse)
+					results.Weeks.Add(JsonConvert.DeserializeObject<Week>(row.Value.ToString()));
+
+				return results;
+			}
+			catch (JsonReaderException e)
+			{
+				// No valid JSON was recieved. Throw the ugly html error that the service is returning.
+				throw new ApplicationException(response, e);
+			}
 		}
 
 
 		private string Execute(NameValueCollection postCollection)
 		{
+			var request = WebRequest.Create(_serviceUrl);
+			request.ContentType = "application/x-www-form-urlencoded";
+			request.Method = WebRequestMethods.Http.Post;
+
 			var postData = postCollection.ToString();
 			var byteArray = new ASCIIEncoding().GetBytes(postData);
-			_request.ContentLength = byteArray.Length;
+			request.ContentLength = byteArray.Length;
 
 			Stream stream = null;
 			StreamReader streamReader = null;
@@ -61,12 +92,12 @@ namespace KNKVPlugin
 			try
 			{
 				// POST
-				stream = _request.GetRequestStream();
+				stream = request.GetRequestStream();
 				stream.Write(byteArray, 0, byteArray.Length);
 				stream.Close();
 
 				// GET RESPONSE
-				response = _request.GetResponse();
+				response = request.GetResponse();
 				stream = response.GetResponseStream();
 
 				// READ RESPONSE

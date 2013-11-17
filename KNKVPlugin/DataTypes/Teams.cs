@@ -27,7 +27,7 @@ namespace KNKVPlugin.DataTypes
 		public string SeasonSerie { get; set; }
 
 		[JsonProperty(PropertyName = "club_id")]
-		public string ClubId { get; set; }
+		public string ClubCode { get; set; }
 
 		[JsonProperty(PropertyName = "poule_id")]
 		public int PouleId { get; set; }
