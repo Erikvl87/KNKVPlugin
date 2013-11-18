@@ -2,7 +2,7 @@
 
 namespace KNKVPlugin.DataTypes
 {
-	public class Results
+	public class Program
 	{
 		public List<Week> Weeks { get; set; }
 	}

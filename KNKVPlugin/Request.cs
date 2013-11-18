@@ -18,6 +18,7 @@ namespace KNKVPlugin
 		public Request(string code)
 		{
 			_serviceUrl = String.Format("http://www.knkv.nl/kcp/{0}/json/", code);
+			_serviceUrl = "http://www.erikvl87.nl/tests/standings.php";
 		}
 
 
@@ -56,7 +57,7 @@ namespace KNKVPlugin
 			try
 			{
 				var jResponse = JObject.Parse(response);
-				var results = new Results {Weeks = new List<Week>()};
+				var results = new Results { Weeks = new List<Week>() };
 
 				foreach (var row in jResponse)
 					results.Weeks.Add(JsonConvert.DeserializeObject<Week>(row.Value.ToString()));
@@ -71,7 +72,7 @@ namespace KNKVPlugin
 		}
 
 
-		public Standings GetStandings()
+		public Positions GetPositions()
 		{
 			var queryString = HttpUtility.ParseQueryString(String.Empty);
 			queryString["t"] = "standing";
@@ -84,12 +85,40 @@ namespace KNKVPlugin
 			try
 			{
 				var jResponse = JArray.Parse(response);
-				var standings = new Standings {Lists = new List<Standing>()};
+				var standings = new Positions { PoulePositions = new List<PoulePosition>() };
 
 				foreach (var row in jResponse)
-					standings.Lists.Add(JsonConvert.DeserializeObject<Standing>(row.ToString()));
+					standings.PoulePositions.Add(JsonConvert.DeserializeObject<PoulePosition>(row.ToString()));
 
 				return standings;
+			}
+			catch (JsonReaderException e)
+			{
+				// No valid JSON was recieved. Throw the ugly html error that the service is returning.
+				throw new ApplicationException(response, e);
+			}
+		}
+
+
+		public Program GetPrograms()
+		{
+			var queryString = HttpUtility.ParseQueryString(String.Empty);
+			queryString["t"] = "program";
+			queryString["t_id"] = "";
+			queryString["p"] = "0";
+			queryString["full"] = "0";
+
+			var response = Execute(queryString);
+
+			try
+			{
+				var jResponse = JObject.Parse(response);
+				var program = new Program { Weeks = new List<Week>() };
+
+				foreach (var row in jResponse)
+					program.Weeks.Add(JsonConvert.DeserializeObject<Week>(row.Value.ToString()));
+
+				return program;
 			}
 			catch (JsonReaderException e)
 			{
@@ -131,17 +160,17 @@ namespace KNKVPlugin
 				streamReader = new StreamReader(stream);
 				var responseFromServer = streamReader.ReadToEnd();
 				return responseFromServer;
-				
+
 			}
 			finally
 			{
-				if (streamReader != null) 
+				if (streamReader != null)
 					streamReader.Close();
 
-				if (stream != null) 
+				if (stream != null)
 					stream.Close();
 
-				if (response != null) 
+				if (response != null)
 					response.Close();
 			}
 		}

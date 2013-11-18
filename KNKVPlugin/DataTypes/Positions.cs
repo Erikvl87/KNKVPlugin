@@ -3,6 +3,22 @@ using Newtonsoft.Json;
 
 namespace KNKVPlugin.DataTypes
 {
+	public class Positions
+	{
+		public List<PoulePosition> PoulePositions { get; set; }
+	}
+
+
+	public class PoulePosition
+	{
+		[JsonProperty(PropertyName = "poule")]
+		public Poule Poule { get; set; }
+
+		[JsonProperty(PropertyName = "lines")]
+		public List<Position> Positions { get; set; }
+	}
+
+
 	public class Poule
 	{
 		[JsonProperty(PropertyName = "poule_name")]
@@ -49,19 +65,5 @@ namespace KNKVPlugin.DataTypes
 
 		[JsonProperty(PropertyName = "penalties")]
 		public string Penalties { get; set; }
-	}
-
-	public class Standing
-	{
-		[JsonProperty(PropertyName = "poule")]
-		public Poule Poule { get; set; }
-
-		[JsonProperty(PropertyName = "lines")]
-		public List<Position> Positions { get; set; }
-	}
-
-	public class Standings
-	{
-		public List<Standing> Lists { get; set; } 
 	}
 }
