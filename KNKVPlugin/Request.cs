@@ -18,7 +18,6 @@ namespace KNKVPlugin
 		public Request(string code)
 		{
 			_serviceUrl = String.Format("http://www.knkv.nl/kcp/{0}/json/", code);
-			_serviceUrl = "http://www.erikvl87.nl/tests/standings.php";
 		}
 
 
