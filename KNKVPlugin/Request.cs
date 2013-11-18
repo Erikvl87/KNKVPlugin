@@ -24,8 +24,6 @@ namespace KNKVPlugin
 		public Teams GetTeams()
 		{
 			var queryString = HttpUtility.ParseQueryString(String.Empty);
-			queryString["file"] = "json";
-			queryString["f"] = "get_data";
 			queryString["t"] = "teams";
 			queryString["t_id"] = "";
 			queryString["p"] = "0";
@@ -49,8 +47,6 @@ namespace KNKVPlugin
 		public Results GetResults()
 		{
 			var queryString = HttpUtility.ParseQueryString(String.Empty);
-			queryString["file"] = "json";
-			queryString["f"] = "get_data";
 			queryString["t"] = "result";
 			queryString["t_id"] = "";
 			queryString["p"] = "0";
@@ -78,8 +74,6 @@ namespace KNKVPlugin
 		public Standings GetStandings()
 		{
 			var queryString = HttpUtility.ParseQueryString(String.Empty);
-			queryString["file"] = "json";
-			queryString["f"] = "get_data";
 			queryString["t"] = "standing";
 			queryString["t_id"] = "";
 			queryString["p"] = "0";
@@ -111,7 +105,10 @@ namespace KNKVPlugin
 			request.ContentType = "application/x-www-form-urlencoded";
 			request.Method = WebRequestMethods.Http.Post;
 
+			postCollection["file"] = "json";
+			postCollection["f"] = "get_data";
 			var postData = postCollection.ToString();
+
 			var byteArray = new ASCIIEncoding().GetBytes(postData);
 			request.ContentLength = byteArray.Length;
 
