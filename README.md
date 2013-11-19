@@ -11,6 +11,8 @@ This class library owes its existance to a new project for http://www.gkvdenhaag
 
 ## Usage:
 ```csharp
+korfballRequest = new KNKVPlugin.Request("<subscription code>");
+
 // Get overall data
 KNKVPlugin.DataTypes.Results results = korfballRequest.GetResults();
 KNKVPlugin.DataTypes.Program program = korfballRequest.GetProgram();
