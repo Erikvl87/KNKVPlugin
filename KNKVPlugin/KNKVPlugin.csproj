@@ -49,6 +49,10 @@
     <Compile Include="DataTypes\Positions.cs" />
     <Compile Include="DataTypes\Teams.cs" />
     <Compile Include="DataTypes\Week.cs" />
+    <Compile Include="GetPositions.cs" />
+    <Compile Include="GetProgram.cs" />
+    <Compile Include="GetResults.cs" />
+    <Compile Include="GetTeams.cs" />
     <Compile Include="Request.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
