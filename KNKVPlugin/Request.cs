@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Net;
 using System.Text;
-using System.Web;
-using KNKVPlugin.DataTypes;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace KNKVPlugin
 {

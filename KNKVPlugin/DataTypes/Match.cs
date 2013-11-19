@@ -49,10 +49,10 @@ namespace KNKVPlugin.DataTypes
 		[JsonProperty(PropertyName = "field")]
 		public string Field { get; set; }
 
-		[JsonProperty(PropertyName = "facility_name ")]
+		[JsonProperty(PropertyName = "facility_name")]
 		public string FacilityName { get; set; }
 
-		[JsonProperty(PropertyName = "facility_id ")]
+		[JsonProperty(PropertyName = "facility_id")]
 		public string FacilityId { get; set; }
 
 		[JsonProperty(PropertyName = "home_score")]
