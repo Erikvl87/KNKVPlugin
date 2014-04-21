@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web;
-using KNKVPlugin.DataTypes;
+using KNKVPlugin.Model;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 

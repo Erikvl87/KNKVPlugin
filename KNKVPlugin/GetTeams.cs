@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web;
-using KNKVPlugin.DataTypes;
+using KNKVPlugin.Model;
 using Newtonsoft.Json;
 
 namespace KNKVPlugin
