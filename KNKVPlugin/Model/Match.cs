@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace KNKVPlugin.DataTypes
+namespace KNKVPlugin.Model
 {
 	public class Match
 	{

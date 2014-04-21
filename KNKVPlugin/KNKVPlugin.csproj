@@ -43,12 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataTypes\Match.cs" />
-    <Compile Include="DataTypes\Program.cs" />
-    <Compile Include="DataTypes\Results.cs" />
-    <Compile Include="DataTypes\Positions.cs" />
-    <Compile Include="DataTypes\Teams.cs" />
-    <Compile Include="DataTypes\Week.cs" />
+    <Compile Include="Model\Match.cs" />
+    <Compile Include="Model\Program.cs" />
+    <Compile Include="Model\Results.cs" />
+    <Compile Include="Model\Positions.cs" />
+    <Compile Include="Model\Teams.cs" />
+    <Compile Include="Model\Week.cs" />
     <Compile Include="GetPositions.cs" />
     <Compile Include="GetProgram.cs" />
     <Compile Include="GetResults.cs" />
