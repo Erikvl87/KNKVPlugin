@@ -35,6 +35,9 @@ namespace KNKVPlugin.DataTypes
 		[JsonProperty(PropertyName = "sport_id")]
 		public string SportId { get; set; }
 
+		[JsonProperty(PropertyName = "c_team_name_basic")]
+		public string TeamNameBasic { get; set; }
+
 		[JsonProperty(PropertyName = "team_name")]
 		public string TeamName { get; set; }
 
