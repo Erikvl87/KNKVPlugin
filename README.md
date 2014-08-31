@@ -3,7 +3,7 @@ KNKVPlugin
 
 A .NET Class Library for the KNKV Onsweb.nl XML / JSON Plugin: http://www.onswebbond.nl/voor-verenigingen/
 
-This class library owes its existance to a new project for http://www.gkvdenhaag.nl (project yet to be released).
+This KNKV plugin owes its existance to the http://www.gkvdenhaag.nl website.
 
 ## Requirements:
 * .NET Framework v4.5
