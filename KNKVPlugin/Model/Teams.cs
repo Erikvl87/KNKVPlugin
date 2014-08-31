@@ -1,14 +1,27 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace KNKVPlugin.Model
 {
-	public class Teams
+	[JsonObject]
+	public class Teams : IEnumerable<Category>
 	{
 		public Category Senioren { get; set; }
 		public Category Junioren { get; set; }
 		public Category Aspiranten { get; set; }
 		public Category Pupillen { get; set; }
+
+		public IEnumerator<Category> GetEnumerator()
+		{
+			var categories = new List<Category> {Senioren, Junioren, Aspiranten, Pupillen};
+			return categories.GetEnumerator();
+		}
+
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return GetEnumerator();
+		}
 	}
 
 	public class Category
