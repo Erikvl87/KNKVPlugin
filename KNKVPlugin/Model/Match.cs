@@ -5,60 +5,60 @@ namespace KNKVPlugin.Model
 	public class Match
 	{
 		[JsonProperty(PropertyName = "program_id")]
-		public string ProgramId { get; set; }
+		public readonly string ProgramId;
 
 		[JsonProperty(PropertyName = "game_id")]
-		public string GameId { get; set; }
+		public readonly string GameId;
 
 		[JsonProperty(PropertyName = "year")]
-		public string Year { get; set; }
+		public readonly string Year;
 
 		[JsonProperty(PropertyName = "home_team_name")]
-		public string TeamName { get; set; }
+		public readonly string TeamName;
 
 		[JsonProperty(PropertyName = "htc_id")]
-		public string ClubCode { get; set; }
+		public readonly string ClubCode;
 
 		[JsonProperty(PropertyName = "away_team_name")]
-		public string TeamNameGuests { get; set; }
+		public readonly string TeamNameGuests;
 
 		[JsonProperty(PropertyName = "atc_id")]
-		public string ClubCodeGuests { get; set; }
+		public readonly string ClubCodeGuests;
 
 		[JsonProperty(PropertyName = "date")]
-		public string Date { get; set; }
+		public readonly string Date;
 
 		[JsonProperty(PropertyName = "time")]
-		public string Time { get; set; }
+		public readonly string Time;
 
 		[JsonProperty(PropertyName = "match_officials")]
-		public string MatchOfficials { get; set; }
+		public readonly string MatchOfficials;
 
 		[JsonProperty(PropertyName = "poule_name")]
-		public string PouleName { get; set; }
+		public readonly string PouleName;
 
 		[JsonProperty(PropertyName = "home_team_id")]
-		public string HomeTeamId { get; set; }
+		public readonly string HomeTeamId;
 
 		[JsonProperty(PropertyName = "away_team_id")]
-		public string AwayTeamId { get; set; }
+		public readonly string AwayTeamId;
 
 		[JsonProperty(PropertyName = "class_name")]
-		public string ClassName { get; set; }
+		public readonly string ClassName;
 
 		[JsonProperty(PropertyName = "field")]
-		public string Field { get; set; }
+		public readonly string Field;
 
 		[JsonProperty(PropertyName = "facility_name")]
-		public string FacilityName { get; set; }
+		public readonly string FacilityName;
 
 		[JsonProperty(PropertyName = "facility_id")]
-		public string FacilityId { get; set; }
+		public readonly string FacilityId;
 
 		[JsonProperty(PropertyName = "home_score")]
-		public string Score { get; set; }
+		public readonly string Score;
 
 		[JsonProperty(PropertyName = "away_score")]
-		public string ScoreGuests { get; set; }
+		public readonly string ScoreGuests;
 	}
 }

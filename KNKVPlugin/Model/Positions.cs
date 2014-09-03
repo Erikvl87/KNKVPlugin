@@ -5,65 +5,65 @@ namespace KNKVPlugin.Model
 {
 	public class Positions
 	{
-		public List<PoulePosition> PoulePositions { get; set; }
+		public List<PoulePosition> PoulePositions;
 	}
 
 
 	public class PoulePosition
 	{
 		[JsonProperty(PropertyName = "poule")]
-		public Poule Poule { get; set; }
+		public readonly Poule Poule;
 
 		[JsonProperty(PropertyName = "lines")]
-		public List<Position> Positions { get; set; }
+		public readonly List<Position> Positions;
 	}
 
 
 	public class Poule
 	{
 		[JsonProperty(PropertyName = "poule_name")]
-		public string PouleName { get; set; }
+		public readonly string PouleName;
 
 		[JsonProperty(PropertyName = "sport")]
-		public string Sport { get; set; }
+		public readonly string Sport;
 	}
 
 	public class Position
 	{
 		[JsonProperty(PropertyName = "position")]
-		public string Pos { get; set; }
+		public readonly string Pos;
 
 		[JsonProperty(PropertyName = "team_name")]
-		public string TeamName { get; set; }
+		public readonly string TeamName;
 
 		[JsonProperty(PropertyName = "played")]
-		public string Played { get; set; }
+		public readonly string Played;
 
 		[JsonProperty(PropertyName = "points")]
-		public string Points { get; set; }
+		public readonly string Points;
 
 		[JsonProperty(PropertyName = "won")]
-		public string Won { get; set; }
+		public readonly string Won;
 
 		[JsonProperty(PropertyName = "lost")]
-		public string Lost { get; set; }
+		public readonly string Lost;
 
 		[JsonProperty(PropertyName = "draw")]
-		public string Draw { get; set; }
+		public readonly string Draw;
 
 		[JsonProperty(PropertyName = "sport")]
-		public string Sport { get; set; }
+		public readonly string Sport;
 
 		[JsonProperty(PropertyName = "serie")]
-		public string Serie { get; set; }
+		public readonly string Serie;
 
 		[JsonProperty(PropertyName = "goals_for")]
-		public string GoalsFor { get; set; }
+		public readonly string GoalsFor;
 
 		[JsonProperty(PropertyName = "goals_against")]
-		public string GoalsAgainst { get; set; }
+		public readonly string GoalsAgainst;
 
 		[JsonProperty(PropertyName = "penalties")]
-		public string Penalties { get; set; }
+		public readonly string Penalties;
 	}
 }

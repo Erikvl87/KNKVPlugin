@@ -7,10 +7,17 @@ namespace KNKVPlugin.Model
 	[JsonObject]
 	public class Teams : IEnumerable<Category>
 	{
-		public Category Senioren { get; set; }
-		public Category Junioren { get; set; }
-		public Category Aspiranten { get; set; }
-		public Category Pupillen { get; set; }
+		[JsonProperty(PropertyName = "Senioren")]
+		public readonly Category Senioren;
+
+		[JsonProperty(PropertyName = "Junioren")]
+		public readonly Category Junioren;
+
+		[JsonProperty(PropertyName = "Aspiranten")]
+		public readonly Category Aspiranten;
+
+		[JsonProperty(PropertyName = "Pupillen")]
+		public readonly Category Pupillen;
 
 		public IEnumerator<Category> GetEnumerator()
 		{
@@ -27,40 +34,40 @@ namespace KNKVPlugin.Model
 	public class Category
 	{
 		[JsonProperty(PropertyName = "v")]
-		public List<Team> Teams { get; set; }
+		public readonly List<Team> Teams;
 	}
 
 
 	public class Team
 	{
 		[JsonProperty(PropertyName = "season_year")]
-		public int SeasonYear { get; set; }
+		public readonly int SeasonYear;
 
 		[JsonProperty(PropertyName = "season_serie")]
-		public string SeasonSerie { get; set; }
+		public readonly string SeasonSerie;
 
 		[JsonProperty(PropertyName = "club_id")]
-		public string ClubCode { get; set; }
+		public readonly string ClubCode;
 
 		[JsonProperty(PropertyName = "poule_id")]
-		public int PouleId { get; set; }
+		public readonly int PouleId;
 
 		[JsonProperty(PropertyName = "sport_id")]
-		public string SportId { get; set; }
+		public readonly string SportId;
 
 		[JsonProperty(PropertyName = "c_team_name_basic")]
-		public string TeamNameBasic { get; set; }
+		public readonly string TeamNameBasic;
 
 		[JsonProperty(PropertyName = "team_name")]
-		public string TeamName { get; set; }
+		public readonly string TeamName;
 
 		[JsonProperty(PropertyName = "class_id")]
-		public int ClassId { get; set; }
+		public readonly int ClassId;
 
 		[JsonProperty(PropertyName = "team_id")]
-		public int TeamId { get; set; }
+		public readonly int TeamId;
 
 		[JsonProperty(PropertyName = "team_id_group")]
-		public string TeamIdGroup { get; set; }
+		public readonly string TeamIdGroup;
 	}
 }
