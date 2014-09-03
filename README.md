@@ -9,6 +9,9 @@ This KNKV plugin owes its existance to the http://www.gkvdenhaag.nl website.
 * .NET Framework v4.5
 * A subscription for the Onsweb XML Webservice (http://www.onswebbond.nl/voor-verenigingen/bestelformulier-knkv/)
 
+## NuGet:
+The KNKVPlugin is available on NuGet: https://www.nuget.org/packages/KNKVPlugin/
+
 ## Usage:
 ```csharp
 var korfballRequest = new KNKVPlugin.Request("<subscription code>");
