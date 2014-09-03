@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
 namespace KNKVPlugin.Model
 {
 	[JsonObject]
-	public class Teams : IEnumerable<Category>
+	public class Teams : IEnumerable<Team>
 	{
 		[JsonProperty(PropertyName = "Senioren")]
 		public readonly Category Senioren;
@@ -19,15 +21,30 @@ namespace KNKVPlugin.Model
 		[JsonProperty(PropertyName = "Pupillen")]
 		public readonly Category Pupillen;
 
-		public IEnumerator<Category> GetEnumerator()
+		public IEnumerator<Team> GetEnumerator()
 		{
-			var categories = new List<Category> {Senioren, Junioren, Aspiranten, Pupillen};
-			return categories.GetEnumerator();
+			return List.GetEnumerator();
 		}
 
 		IEnumerator IEnumerable.GetEnumerator()
 		{
 			return GetEnumerator();
+		}
+
+		public string ClubCode { get; private set; }
+		public List<Team> List = new List<Team>();
+		
+		[OnDeserialized]
+		void CreateList(StreamingContext sc)
+		{
+			List.AddRange(Senioren.Teams);
+			List.AddRange(Junioren.Teams);
+			List.AddRange(Aspiranten.Teams);
+			List.AddRange(Pupillen.Teams);
+
+			var firstTeamElement = List.FirstOrDefault();
+			if (firstTeamElement != null)
+				ClubCode = firstTeamElement.ClubCode;
 		}
 	}
 
