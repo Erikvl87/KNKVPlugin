@@ -66,12 +66,12 @@ namespace KNKVPlugin
 			try
 			{
 				var jResponse = JObject.Parse(response);
-				var program = new Program { Weeks = new List<Week>() };
 
+				var weeks = new List<Week>();
 				foreach (var row in jResponse)
-					program.Weeks.Add(JsonConvert.DeserializeObject<Week>(row.Value.ToString()));
+					weeks.Add(JsonConvert.DeserializeObject<Week>(row.Value.ToString()));
 
-				return program;
+				return new Program(weeks);
 			}
 			catch (JsonReaderException e)
 			{
