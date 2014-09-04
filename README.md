@@ -1,7 +1,7 @@
 KNKVPlugin
 ==========
 
-A .NET Class Library for the KNKV Onsweb.nl XML / JSON webservice: http://www.onswebbond.nl/voor-verenigingen/
+A C# .NET Class Library for the KNKV Onsweb.nl XML / JSON webservice: http://www.onswebbond.nl/voor-verenigingen/
 
 This KNKV plugin owes its existance to the http://www.gkvdenhaag.nl website.
 
