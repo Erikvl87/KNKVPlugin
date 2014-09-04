@@ -57,15 +57,16 @@ namespace KNKVPlugin
 			queryString["full"] = "0";
 
 			var response = Execute(queryString);
+
 			try
 			{
 				var jResponse = JObject.Parse(response);
-				var results = new Results { Weeks = new List<Week>() };
 
+				var weeks = new List<Week>();
 				foreach (var row in jResponse)
-					results.Weeks.Add(JsonConvert.DeserializeObject<Week>(row.Value.ToString()));
+					weeks.Add(JsonConvert.DeserializeObject<Week>(row.Value.ToString()));
 
-				return results;
+				return new Results(weeks);
 			}
 			catch (JsonReaderException e)
 			{
