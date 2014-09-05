@@ -33,3 +33,19 @@ KNKVPlugin.Model.Positions positionsForTeam = korfballRequest.GetPositions(new[]
 // Get data from 2 weeks ago for a specific team-id
 KNKVPlugin.Model.Results resultsTwoweeksAgo = korfballRequest.GetResults(new[] { 1234 }, -2);
 ```
+
+## Examples:
+```csharp
+var korfballRequest = new KNKVPlugin.Request("1234567890abcdef");
+var program = korfballRequest.GetProgram();
+
+foreach (var game in program)
+{
+	Console.WriteLine("{0} {1}", game.Date, game.Time);
+	Console.WriteLine("{0} - {1}", game.TeamName, game.TeamNameGuests);
+	Console.WriteLine("{0}", game.FacilityName);
+	Console.WriteLine();
+}
+```
+
+![Program](https://github.com/Erikvl87/KNKVPlugin/raw/master/Images/Examples/Program.png)
