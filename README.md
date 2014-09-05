@@ -12,7 +12,7 @@ This KNKV plugin owes its existance to the http://www.gkvdenhaag.nl website.
 ## NuGet:
 The KNKVPlugin is available on NuGet: https://www.nuget.org/packages/KNKVPlugin/
 
-## Methods:
+## Usage:
 ```csharp
 var korfballRequest = new KNKVPlugin.Request("<subscription code>");
 var results = korfballRequest.GetResults();
