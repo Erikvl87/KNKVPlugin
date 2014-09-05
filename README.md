@@ -33,7 +33,7 @@ KNKVPlugin.Model.Results resultsTwoweeksAgo = korfballRequest.GetResults(new[] {
 ```
 
 ## Examples:
-### Program
+#### Program
 ```csharp
 var korfballRequest = new KNKVPlugin.Request("<subscription code>");
 var program = korfballRequest.GetProgram();
@@ -47,7 +47,7 @@ foreach (var game in program)
 }
 ```
 
-### Results
+#### Results
 ```csharp
 var korfballRequest = new KNKVPlugin.Request("<subscription code>");
 var program = korfballRequest.GetProgram();
@@ -59,7 +59,7 @@ foreach (var game in results)
 }
 ```
 
-### Teams
+#### Teams
 ```csharp
 var korfballRequest = new KNKVPlugin.Request("<subscription code>");
 var teams = korfballRequest.GetTeams();
@@ -70,7 +70,7 @@ foreach (var team in teams)
 }
 ```
 
-### Scores
+#### Scores
 ```csharp
 var korfballRequest = new KNKVPlugin.Request("<subscription code>");
 var results = korfballRequest.GetResults();
@@ -80,3 +80,49 @@ foreach (var result in results)
 	Console.WriteLine("{0} - {1}: {2} - {3}", result.Score, result.ScoreGuests, result.TeamName, result.TeamNameGuests);
 }
 ```
+
+## Available properties:
+* Match
+	* ProgramId
+	* GameId
+	* Year
+	* TeamName
+	* ClubCode
+	* TeamNameGuests
+	* ClubCodeGuests
+	* Date
+	* Time
+	* MatchOfficials
+	* PouleName
+	* HomeTeamId
+	* AwayTeamId
+	* ClassName
+	* Field
+	* FacilityName
+	* FacilityId
+	* Score
+	* ScoreGuests
+* Positions
+	* Pos
+	* TeamName
+	* Played
+	* Points
+	* Won
+	* Lost
+	* Draw
+	* Sport
+	* Serie
+	* GoalsFor
+	* GoalsAgainst
+	* Penalties
+* Teams
+	* SeasonYear
+	* SeasonSerie
+	* ClubCode
+	* PouleId
+	* SportId
+	* TeamNameBasic
+	* TeamName
+	* ClassId
+	* TeamId
+	* TeamIdGroup
