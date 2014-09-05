@@ -12,31 +12,30 @@ This KNKV plugin owes its existance to the http://www.gkvdenhaag.nl website.
 ## NuGet:
 The KNKVPlugin is available on NuGet: https://www.nuget.org/packages/KNKVPlugin/
 
-## Usage:
+## Methods:
 ```csharp
 var korfballRequest = new KNKVPlugin.Request("<subscription code>");
-
-// Get overall data
-KNKVPlugin.Model.Results results = korfballRequest.GetResults();
-KNKVPlugin.Model.Program program = korfballRequest.GetProgram();
-KNKVPlugin.Model.Positions positions = korfballRequest.GetPositions();
-KNKVPlugin.Model.Teams teams = korfballRequest.GetTeams();
+var results = korfballRequest.GetResults();
+var program = korfballRequest.GetProgram();
+var positions = korfballRequest.GetPositions();
+var teams = korfballRequest.GetTeams();
 
 // Get data from a week ago
-KNKVPlugin.Model.Results resultsOneWeekAgo = korfballRequest.GetResults(-1);
+var resultsOneWeekAgo = korfballRequest.GetResults(-1);
 
 // Get data for a specific team-id
-KNKVPlugin.Model.Program programForTeam = korfballRequest.GetProgram(new[]{ 1234 });
-KNKVPlugin.Model.Results resultsForTeam = korfballRequest.GetResults(new[] { 1234 });
-KNKVPlugin.Model.Positions positionsForTeam = korfballRequest.GetPositions(new[] { 1234 });
+var programForTeam = korfballRequest.GetProgram(new[]{ 1234 });
+var resultsForTeam = korfballRequest.GetResults(new[] { 1234 });
+var positionsForTeam = korfballRequest.GetPositions(new[] { 1234 });
 
 // Get data from 2 weeks ago for a specific team-id
 KNKVPlugin.Model.Results resultsTwoweeksAgo = korfballRequest.GetResults(new[] { 1234 }, -2);
 ```
 
 ## Examples:
+### Program
 ```csharp
-var korfballRequest = new KNKVPlugin.Request("1234567890abcdef");
+var korfballRequest = new KNKVPlugin.Request("<subscription code>");
 var program = korfballRequest.GetProgram();
 
 foreach (var game in program)
@@ -48,4 +47,36 @@ foreach (var game in program)
 }
 ```
 
-![Program](https://github.com/Erikvl87/KNKVPlugin/raw/master/Images/Examples/Program.png)
+### Results
+```csharp
+var korfballRequest = new KNKVPlugin.Request("<subscription code>");
+var program = korfballRequest.GetProgram();
+
+foreach (var game in results)
+{
+	Console.WriteLine("{0} - {1}: {2}, {3}", game.Score, game.ScoreGuests, game.TeamName, game.TeamNameGuests);
+	Console.WriteLine();
+}
+```
+
+### Teams
+```csharp
+var korfballRequest = new KNKVPlugin.Request("<subscription code>");
+var teams = korfballRequest.GetTeams();
+
+foreach (var team in teams)
+{
+	Console.WriteLine("{0}", team.TeamName);
+}
+```
+
+### Scores
+```csharp
+var korfballRequest = new KNKVPlugin.Request("<subscription code>");
+var results = korfballRequest.GetResults();
+
+foreach (var result in results)
+{
+	Console.WriteLine("{0} - {1}: {2} - {3}", result.Score, result.ScoreGuests, result.TeamName, result.TeamNameGuests);
+}
+```
