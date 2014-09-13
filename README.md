@@ -1,5 +1,5 @@
 [![NuGet](http://img.shields.io/nuget/v/KNKVPlugin.svg?style=flat-square)](https://www.nuget.org/packages/KNKVPlugin/)
-[![Downloads](http://img.shields.io/nuget/dt/KNKVPlugin.svg?style=flat-square)](https://www.nuget.org/packages/Mandrill/)
+[![Downloads](http://img.shields.io/nuget/dt/KNKVPlugin.svg?style=flat-square)](https://www.nuget.org/packages/KNKVPlugin/)
 KNKVPlugin
 ==========
 
