@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Facility.cs" />
     <Compile Include="Model\Match.cs" />
     <Compile Include="Model\Program.cs" />
     <Compile Include="Model\Results.cs" />

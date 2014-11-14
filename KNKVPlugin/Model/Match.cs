@@ -49,11 +49,8 @@ namespace KNKVPlugin.Model
 		[JsonProperty(PropertyName = "field")]
 		public readonly string Field;
 
-		[JsonProperty(PropertyName = "facility_name")]
-		public readonly string FacilityName;
-
-		[JsonProperty(PropertyName = "facility_id")]
-		public readonly string FacilityId;
+		[JsonProperty(PropertyName = "facility")]
+		public Facility Facility { get; set; }
 
 		[JsonProperty(PropertyName = "home_score")]
 		public readonly string Score;

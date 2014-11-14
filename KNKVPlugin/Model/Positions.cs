@@ -21,6 +21,9 @@ namespace KNKVPlugin.Model
 
 	public class Poule
 	{
+		[JsonProperty(PropertyName = "poule_id")]
+		public readonly string PouleId;
+
 		[JsonProperty(PropertyName = "poule_name")]
 		public readonly string PouleName;
 
@@ -32,6 +35,9 @@ namespace KNKVPlugin.Model
 	{
 		[JsonProperty(PropertyName = "position")]
 		public readonly string Pos;
+
+		[JsonProperty(PropertyName = "team_id")]
+		public readonly string TeamId;
 
 		[JsonProperty(PropertyName = "team_name")]
 		public readonly string TeamName;
@@ -62,6 +68,9 @@ namespace KNKVPlugin.Model
 
 		[JsonProperty(PropertyName = "goals_against")]
 		public readonly string GoalsAgainst;
+
+		[JsonProperty(PropertyName = "difference")]
+		public readonly string GoalsDifference;
 
 		[JsonProperty(PropertyName = "penalties")]
 		public readonly string Penalties;
