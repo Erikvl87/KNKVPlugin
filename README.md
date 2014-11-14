@@ -100,12 +100,17 @@ foreach (var result in results)
 	* AwayTeamId
 	* ClassName
 	* Field
-	* FacilityName
-	* FacilityId
+	* Facility
+		* Id
+		* Name
+		* Address
+		* Zipcode
+		* City
 	* Score
 	* ScoreGuests
 * Positions
 	* Pos
+	* TeamId
 	* TeamName
 	* Played
 	* Points
@@ -116,6 +121,7 @@ foreach (var result in results)
 	* Serie
 	* GoalsFor
 	* GoalsAgainst
+	* GoalsDifference
 	* Penalties
 * Teams
 	* SeasonYear
