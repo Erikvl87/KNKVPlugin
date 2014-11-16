@@ -1,25 +1,44 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace KNKVPlugin.Model
 {
-	public class Positions
-	{
-		public List<PoulePosition> PoulePositions;
-	}
-
-
-	public class PoulePosition
+	[JsonObject]
+	public class Poule : IEnumerable<Position>
 	{
 		[JsonProperty(PropertyName = "poule")]
-		public readonly Poule Poule;
+		private PouleData PouleData
+		{
+			set
+			{
+				PouleId = value.PouleId;
+				PouleName = value.PouleName;
+				Sport = value.Sport;
+			}
+		}
 
 		[JsonProperty(PropertyName = "lines")]
 		public readonly List<Position> Positions;
+
+		public IEnumerator<Position> GetEnumerator()
+		{
+			return Positions.GetEnumerator();
+		}
+
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return GetEnumerator();
+		}
+
+		public string PouleId { get; private set; }
+		public string PouleName { get; private set; }
+		public string Sport { get; private set; }
 	}
 
 
-	public class Poule
+
+	public class PouleData
 	{
 		[JsonProperty(PropertyName = "poule_id")]
 		public readonly string PouleId;
@@ -30,6 +49,8 @@ namespace KNKVPlugin.Model
 		[JsonProperty(PropertyName = "sport")]
 		public readonly string Sport;
 	}
+
+
 
 	public class Position
 	{

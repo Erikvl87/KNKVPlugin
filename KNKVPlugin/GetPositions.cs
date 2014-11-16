@@ -13,7 +13,7 @@ namespace KNKVPlugin
 		/// Returns all poules positions for the current club (the club is determined by the service using the service code)
 		/// </summary>
 		/// <returns></returns>
-		public Positions GetPositions()
+		public List<Poule> GetPositions()
 		{
 			return GetPositions(null);
 		}
@@ -23,7 +23,7 @@ namespace KNKVPlugin
 		/// </summary>
 		/// <param name="teamIds"></param>
 		/// <returns></returns>
-		public Positions GetPositions(int[] teamIds)
+		public List<Poule> GetPositions(int[] teamIds)
 		{
 			var queryString = HttpUtility.ParseQueryString(String.Empty);
 			queryString["t"] = "standing";
@@ -36,10 +36,10 @@ namespace KNKVPlugin
 			try
 			{
 				var jResponse = JArray.Parse(response);
-				var standings = new Positions { PoulePositions = new List<PoulePosition>() };
+				var standings = new List<Poule>();
 
 				foreach (var row in jResponse)
-					standings.PoulePositions.Add(JsonConvert.DeserializeObject<PoulePosition>(row.ToString()));
+					standings.Add(JsonConvert.DeserializeObject<Poule>(row.ToString()));
 
 				return standings;
 			}
