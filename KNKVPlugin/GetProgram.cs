@@ -16,7 +16,7 @@ namespace KNKVPlugin
 		/// Get the program for all teams for this week
 		/// </summary>
 		/// <returns></returns>
-		public Program GetProgram()
+		public ResponseResult<Program> GetProgram()
 		{
 			return GetProgram(null, false);
 		}
@@ -28,7 +28,7 @@ namespace KNKVPlugin
 		/// </summary>
 		/// <param name="fullProgram">Indication for returning the full program or only for the current week.</param>
 		/// <returns></returns>
-		public Program GetProgram(bool fullProgram)
+		public ResponseResult<Program> GetProgram(bool fullProgram)
 		{
 			return GetProgram(null, true);
 		}
@@ -40,7 +40,7 @@ namespace KNKVPlugin
 		/// </summary>
 		/// <param name="teamIds">Select teams to request the program</param>
 		/// <returns></returns>
-		public Program GetProgram(int[] teamIds)
+		public ResponseResult<Program> GetProgram(int[] teamIds)
 		{
 			return GetProgram(teamIds, false);
 		}
@@ -53,7 +53,7 @@ namespace KNKVPlugin
 		/// <param name="teamIds">Select teams to request the program</param>
 		/// <param name="fullProgram">Indication for returning the full program or only for the current week.</param>
 		/// <returns></returns>
-		public Program GetProgram(int[] teamIds, bool fullProgram)
+		public ResponseResult<Program> GetProgram(int[] teamIds, bool fullProgram)
 		{
 			var queryString = HttpUtility.ParseQueryString(String.Empty);
 			queryString["t"] = "program";
@@ -71,7 +71,7 @@ namespace KNKVPlugin
 				foreach (var row in jResponse)
 					weeks.Add(JsonConvert.DeserializeObject<Week>(row.Value.ToString()));
 
-				return new Program(weeks);
+				return new ResponseResult<Program>(response, new Program(weeks));
 			}
 			catch (JsonReaderException e)
 			{

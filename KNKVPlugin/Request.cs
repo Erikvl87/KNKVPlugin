@@ -6,6 +6,20 @@ using System.Text;
 
 namespace KNKVPlugin
 {
+	public class ResponseResult<T>
+	{
+		public string RawResponse { get; internal set; }
+		public T Result { get; internal set; }
+
+		public ResponseResult(string rawResponse, T result)
+		{
+			RawResponse = rawResponse;
+			Result = result;
+		}
+	}
+
+
+
 	public partial class Request
 	{
 		private readonly String _serviceUrl;
@@ -44,7 +58,7 @@ namespace KNKVPlugin
 
 			try
 			{
-				// POST
+				// POST REQUEST
 				stream = request.GetRequestStream();
 				stream.Write(byteArray, 0, byteArray.Length);
 				stream.Close();
@@ -56,6 +70,8 @@ namespace KNKVPlugin
 				// READ RESPONSE
 				streamReader = new StreamReader(stream);
 				var responseFromServer = streamReader.ReadToEnd();
+
+				// RETURN RESPONSE
 				return responseFromServer;
 
 			}

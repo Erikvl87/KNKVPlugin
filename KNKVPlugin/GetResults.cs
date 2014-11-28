@@ -14,7 +14,7 @@ namespace KNKVPlugin
 		/// Returns results for the current club (the club is determined by the service using the service code)
 		/// </summary>
 		/// <returns></returns>
-		public Results GetResults()
+		public ResponseResult<Results> GetResults()
 		{
 			return GetResults(null, 0);
 		}
@@ -25,7 +25,7 @@ namespace KNKVPlugin
 		/// </summary>
 		/// <param name="paging"></param>
 		/// <returns></returns>
-		public Results GetResults(int paging)
+		public ResponseResult<Results> GetResults(int paging)
 		{
 			return GetResults(null, paging);
 		}
@@ -36,7 +36,7 @@ namespace KNKVPlugin
 		/// </summary>
 		/// <param name="teamIds"></param>
 		/// <returns></returns>
-		public Results GetResults(int[] teamIds)
+		public ResponseResult<Results> GetResults(int[] teamIds)
 		{
 			return GetResults(teamIds, 0);
 		}
@@ -48,7 +48,7 @@ namespace KNKVPlugin
 		/// <param name="teamIds"></param>
 		/// <param name="paging"></param>
 		/// <returns></returns>
-		public Results GetResults(int[] teamIds, int paging)
+		public ResponseResult<Results> GetResults(int[] teamIds, int paging)
 		{
 			var queryString = HttpUtility.ParseQueryString(String.Empty);
 			queryString["t"] = "result";
@@ -66,7 +66,7 @@ namespace KNKVPlugin
 				foreach (var row in jResponse)
 					weeks.Add(JsonConvert.DeserializeObject<Week>(row.Value.ToString()));
 
-				return new Results(weeks);
+				return new ResponseResult<Results>(response, new Results(weeks) );
 			}
 			catch (JsonReaderException e)
 			{

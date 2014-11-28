@@ -11,7 +11,7 @@ namespace KNKVPlugin
 		/// Returns all teams for the current club (the club is determined by the service using the service code)
 		/// </summary>
 		/// <returns></returns>
-		public Teams GetTeams()
+		public ResponseResult<Teams> GetTeams()
 		{
 			var queryString = HttpUtility.ParseQueryString(String.Empty);
 			queryString["t"] = "teams";
@@ -24,7 +24,7 @@ namespace KNKVPlugin
 			try
 			{
 				var teams = JsonConvert.DeserializeObject<Teams>(response);
-				return teams;
+				return new ResponseResult<Teams>(response, teams);
 			}
 			catch (JsonReaderException e)
 			{
