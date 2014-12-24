@@ -42,8 +42,8 @@ namespace KNKVPlugin.Converters
 		{
 			try
 			{
-			var deserializedObject = JsonConvert.DeserializeObject<T>(json);
-			return deserializedObject;
+				var deserializedObject = JsonConvert.DeserializeObject<T>(json);
+				return deserializedObject;
 			}
 			catch (JsonReaderException e)
 			{
