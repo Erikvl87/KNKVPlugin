@@ -14,7 +14,7 @@ This KNKV plugin owes its existance to the http://www.gkvdenhaag.nl website.
 ## NuGet:
 The KNKVPlugin is available on NuGet: https://www.nuget.org/packages/KNKVPlugin/
 
-## Usage:
+## Getting started:
 ```csharp
 var korfballRequest = new KNKVPlugin.Request("<subscription code>");
 var results = korfballRequest.GetResults();
@@ -34,103 +34,5 @@ var positionsForTeam = korfballRequest.GetPositions(new[] { 1234 });
 KNKVPlugin.Model.Results resultsTwoweeksAgo = korfballRequest.GetResults(new[] { 1234 }, -2);
 ```
 
-## Examples:
-#### Program
-```csharp
-var korfballRequest = new KNKVPlugin.Request("<subscription code>");
-var program = korfballRequest.GetProgram();
-
-foreach (var game in program)
-{
-	Console.WriteLine("{0} {1}", game.Date, game.Time);
-	Console.WriteLine("{0} - {1}", game.TeamName, game.TeamNameGuests);
-	Console.WriteLine("{0}", game.FacilityName);
-	Console.WriteLine();
-}
-```
-
-#### Results
-```csharp
-var korfballRequest = new KNKVPlugin.Request("<subscription code>");
-var program = korfballRequest.GetProgram();
-
-foreach (var game in results)
-{
-	Console.WriteLine("{0} - {1}: {2}, {3}", game.Score, game.ScoreGuests, game.TeamName, game.TeamNameGuests);
-	Console.WriteLine();
-}
-```
-
-#### Teams
-```csharp
-var korfballRequest = new KNKVPlugin.Request("<subscription code>");
-var teams = korfballRequest.GetTeams();
-
-foreach (var team in teams)
-{
-	Console.WriteLine("{0}", team.TeamName);
-}
-```
-
-#### Scores
-```csharp
-var korfballRequest = new KNKVPlugin.Request("<subscription code>");
-var results = korfballRequest.GetResults();
-
-foreach (var result in results)
-{
-	Console.WriteLine("{0} - {1}: {2} - {3}", result.Score, result.ScoreGuests, result.TeamName, result.TeamNameGuests);
-}
-```
-
-## Available properties:
-* Match
-	* ProgramId
-	* GameId
-	* Year
-	* TeamName
-	* ClubCode
-	* TeamNameGuests
-	* ClubCodeGuests
-	* Date
-	* Time
-	* MatchOfficials
-	* PouleName
-	* HomeTeamId
-	* AwayTeamId
-	* ClassName
-	* Field
-	* Facility
-		* Id
-		* Name
-		* Address
-		* Zipcode
-		* City
-	* Score
-	* ScoreGuests
-* Positions
-	* Pos
-	* TeamId
-	* TeamName
-	* Played
-	* Points
-	* Won
-	* Lost
-	* Draw
-	* Sport
-	* Serie
-	* GoalsFor
-	* GoalsAgainst
-	* GoalsDifference
-	* Penalties
-* Teams
-	* SeasonYear
-	* SeasonSerie
-	* ClubCode
-	* PouleId
-	* SportId
-	* TeamNameBasic
-	* TeamName
-	* ClassId
-	* TeamId
-	* TeamIdGroup
+## Documentation:
+Documentation and examples can be found on the GitHub Wiki at https://github.com/Erikvl87/KNKVPlugin/wiki 
