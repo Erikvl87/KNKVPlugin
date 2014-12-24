@@ -6,23 +6,9 @@ using System.Text;
 
 namespace KNKVPlugin
 {
-	public class ResponseResult<T>
-	{
-		public string RawResponse { get; internal set; }
-		public T Result { get; internal set; }
-
-		public ResponseResult(string rawResponse, T result)
-		{
-			RawResponse = rawResponse;
-			Result = result;
-		}
-	}
-
-
-
 	public partial class Request
 	{
-		private readonly String _serviceUrl;
+		public string ServiceUrl { get; private set; }
 
 		/// <summary>
 		/// Constructor
@@ -30,7 +16,7 @@ namespace KNKVPlugin
 		/// <param name="code"></param>
 		public Request(string code)
 		{
-			_serviceUrl = String.Format("http://www.knkv.nl/kcp/{0}/json/", code);
+			ServiceUrl = String.Format("http://www.knkv.nl/kcp/{0}/json/", code);
 		}
 
 
@@ -41,7 +27,7 @@ namespace KNKVPlugin
 		/// <returns></returns>
 		private string Execute(NameValueCollection postCollection)
 		{
-			var request = WebRequest.Create(_serviceUrl);
+			var request = WebRequest.Create(ServiceUrl);
 			request.ContentType = "application/x-www-form-urlencoded";
 			request.Method = WebRequestMethods.Http.Post;
 

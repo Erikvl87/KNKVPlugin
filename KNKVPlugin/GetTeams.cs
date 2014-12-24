@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web;
+using KNKVPlugin.Converters;
 using KNKVPlugin.Model;
-using Newtonsoft.Json;
 
 namespace KNKVPlugin
 {
@@ -20,17 +20,8 @@ namespace KNKVPlugin
 			queryString["full"] = "0";
 
 			var response = Execute(queryString);
-
-			try
-			{
-				var teams = JsonConvert.DeserializeObject<Teams>(response);
-				return new ResponseResult<Teams>(response, teams);
-			}
-			catch (JsonReaderException e)
-			{
-				// No valid JSON was recieved. Throw the ugly html error that the service is returning.
-				throw new ApplicationException(response, e);
-			}
+			var teams = TeamsConverter.Convert(response);
+			return teams;
 		}
 	}
 }

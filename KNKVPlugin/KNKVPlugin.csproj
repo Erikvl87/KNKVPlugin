@@ -44,6 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\Converter.cs" />
+    <Compile Include="Converters\TeamsConverter.cs" />
+    <Compile Include="Converters\ResultsConverter.cs" />
+    <Compile Include="Converters\ProgramConverter.cs" />
+    <Compile Include="Converters\PositionsConverter.cs" />
     <Compile Include="Model\Facility.cs" />
     <Compile Include="Model\Match.cs" />
     <Compile Include="Model\Program.cs" />
@@ -57,6 +62,7 @@
     <Compile Include="GetTeams.cs" />
     <Compile Include="Request.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Response.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

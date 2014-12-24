@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Web;
+using KNKVPlugin.Converters;
 using KNKVPlugin.Model;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace KNKVPlugin
 {
@@ -57,22 +55,8 @@ namespace KNKVPlugin
 			queryString["full"] = "0";
 
 			var response = Execute(queryString);
-
-			try
-			{
-				var jResponse = JObject.Parse(response);
-
-				var weeks = new List<Week>();
-				foreach (var row in jResponse)
-					weeks.Add(JsonConvert.DeserializeObject<Week>(row.Value.ToString()));
-
-				return new ResponseResult<Results>(response, new Results(weeks) );
-			}
-			catch (JsonReaderException e)
-			{
-				// No valid JSON was recieved. Throw the ugly html error that the service is returning.
-				throw new ApplicationException(response, e);
-			}
+			var results = ResultsConverter.Convert(response);
+			return results;
 		}
 	}
 }

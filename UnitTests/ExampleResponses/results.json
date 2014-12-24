@@ -1,0 +1,26 @@
+﻿{
+	"2014-08-30": {
+		"week_number": "35",
+		"week_start": "25",
+		"week_end": "31 aug 2014",
+		"items": [
+			{
+				"program_id": "1190653",
+				"game_id": "4690",
+				"year": "2014",
+				"home_team_name": "KVS/Maritiem 5",
+				"htc_id": "NCX27F4",
+				"away_team_name": "GKV (H) 3",
+				"home_score": "16",
+				"away_score": "11",
+				"date": "2014-08-30",
+				"time": "11:30",
+				"match_officials": "Pardoen, R (NoordWest)",
+				"poule_name": "R4I",
+				"home_team_id": "13986",
+				"away_team_id": "13620",
+				"date_short": "30 aug"
+			}
+		]
+	}
+}

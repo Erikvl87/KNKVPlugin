@@ -1,0 +1,250 @@
+﻿{
+	"Senioren": {
+		"k": [
+			"12880,31679",
+			"13312,29925",
+			"13620,29789",
+			"13828,31434"
+		],
+		"v": [
+			{
+				"c_team_id": "12880",
+				"season_year": "2014",
+				"season_serie": "",
+				"club_id": "NCX22S0",
+				"poule_id": "50514",
+				"sport_id": "KORFBALL-VE-WK",
+				"c_team_name": "1",
+				"c_team_name_basic": "1",
+				"class_id": "1006",
+				"team_id": "12880",
+				"team_name": "GKV (H) 1",
+				"team_id_group": "12880,31679",
+				"url": ""
+			},
+			{
+				"c_team_id": "13312",
+				"season_year": "2014",
+				"season_serie": "",
+				"club_id": "NCX22S0",
+				"poule_id": "50647",
+				"sport_id": "KORFBALL-VE-WK",
+				"c_team_name": "2",
+				"c_team_name_basic": "2",
+				"class_id": "1015",
+				"team_id": "13312",
+				"team_name": "GKV (H) 2",
+				"team_id_group": "13312,29925",
+				"url": ""
+			},
+			{
+				"c_team_id": "13620",
+				"season_year": "2014",
+				"season_serie": "",
+				"club_id": "NCX22S0",
+				"poule_id": "50669",
+				"sport_id": "KORFBALL-VE-WK",
+				"c_team_name": "3",
+				"c_team_name_basic": "3",
+				"class_id": "1016",
+				"team_id": "13620",
+				"team_name": "GKV (H) 3",
+				"team_id_group": "13620,29789",
+				"url": ""
+			},
+			{
+				"c_team_id": "13828",
+				"season_year": "2014",
+				"season_serie": "",
+				"club_id": "NCX22S0",
+				"poule_id": "51158",
+				"sport_id": "KORFBALL-VE-WK",
+				"c_team_name": "4",
+				"c_team_name_basic": "4",
+				"class_id": "1018",
+				"team_id": "13828",
+				"team_name": "GKV (H) 4",
+				"team_id_group": "13828,31434",
+				"url": ""
+			}
+		]
+	},
+	"Junioren": {
+		"k": [
+			"32699,14333",
+			"14601,25374"
+		],
+		"v": [
+			{
+				"c_team_id": "32699",
+				"season_year": "2014",
+				"season_serie": "",
+				"club_id": "NCX22S0",
+				"poule_id": "52421",
+				"sport_id": "KORFBALL-ZA-WK",
+				"c_team_name": "A1",
+				"c_team_name_basic": "A1",
+				"class_id": "1033",
+				"team_id": "32699",
+				"team_name": "GKV (H) A1",
+				"team_id_group": "32699,14333",
+				"url": ""
+			},
+			{
+				"c_team_id": "14601",
+				"season_year": "2014",
+				"season_serie": "NAJAAR",
+				"club_id": "NCX22S0",
+				"poule_id": "51034",
+				"sport_id": "KORFBALL-VE-WK",
+				"c_team_name": "A2",
+				"c_team_name_basic": "A2",
+				"class_id": "1036",
+				"team_id": "14601",
+				"team_name": "GKV (H) A2",
+				"team_id_group": "14601,25374",
+				"url": ""
+			}
+		]
+	},
+	"Aspiranten": {
+		"k": [
+			"14946,27310",
+			"32662,15598"
+		],
+		"v": [
+			{
+				"c_team_id": "14946",
+				"season_year": "2014",
+				"season_serie": "NAJAAR",
+				"club_id": "NCX22S0",
+				"poule_id": "51118",
+				"sport_id": "KORFBALL-VE-WK",
+				"c_team_name": "B1",
+				"c_team_name_basic": "B1",
+				"class_id": "1044",
+				"team_id": "14946",
+				"team_name": "GKV (H) B1",
+				"team_id_group": "14946,27310",
+				"url": ""
+			},
+			{
+				"c_team_id": "32662",
+				"season_year": "2014",
+				"season_serie": "",
+				"club_id": "NCX22S0",
+				"poule_id": "52489",
+				"sport_id": "KORFBALL-ZA-WK",
+				"c_team_name": "C1",
+				"c_team_name_basic": "C1",
+				"class_id": "1053",
+				"team_id": "32662",
+				"team_name": "GKV (H) C1",
+				"team_id_group": "32662,15598",
+				"url": ""
+			}
+		]
+	},
+	"Pupillen": {
+		"k": [
+			"30828,20352",
+			"24616,22999",
+			"42259,41776",
+			"20275,25657",
+			"36489,37317",
+			"38417,37616"
+		],
+		"v": [
+			{
+				"c_team_id": "30828",
+				"season_year": "2014",
+				"season_serie": "",
+				"club_id": "NCX22S0",
+				"poule_id": "53359",
+				"sport_id": "KORFBALL-ZA-WK",
+				"c_team_name": "D1",
+				"c_team_name_basic": "D1",
+				"class_id": "1061",
+				"team_id": "30828",
+				"team_name": "GKV (H) D1",
+				"team_id_group": "30828,20352",
+				"url": ""
+			},
+			{
+				"c_team_id": "24616",
+				"season_year": "2014",
+				"season_serie": "",
+				"club_id": "NCX22S0",
+				"poule_id": "52549",
+				"sport_id": "KORFBALL-ZA-WK",
+				"c_team_name": "D2",
+				"c_team_name_basic": "D2",
+				"class_id": "1062",
+				"team_id": "24616",
+				"team_name": "GKV (H) D2",
+				"team_id_group": "24616,22999",
+				"url": ""
+			},
+			{
+				"c_team_id": "42259",
+				"season_year": "2014",
+				"season_serie": "",
+				"club_id": "NCX22S0",
+				"poule_id": "52496",
+				"sport_id": "KORFBALL-ZA-WK",
+				"c_team_name": "D3",
+				"c_team_name_basic": "D3",
+				"class_id": "1063",
+				"team_id": "42259",
+				"team_name": "GKV (H) D3",
+				"team_id_group": "42259,41776",
+				"url": ""
+			},
+			{
+				"c_team_id": "20275",
+				"season_year": "2014",
+				"season_serie": "NAJAAR",
+				"club_id": "NCX22S0",
+				"poule_id": "51865",
+				"sport_id": "KORFBALL-VE-WK",
+				"c_team_name": "E1",
+				"c_team_name_basic": "E1",
+				"class_id": "1076",
+				"team_id": "20275",
+				"team_name": "GKV (H) E1",
+				"team_id_group": "20275,25657",
+				"url": ""
+			},
+			{
+				"c_team_id": "36489",
+				"season_year": "2014",
+				"season_serie": "NAJAAR",
+				"club_id": "NCX22S0",
+				"poule_id": "51902",
+				"sport_id": "KORFBALL-VE-WK",
+				"c_team_name": "F1",
+				"c_team_name_basic": "F1",
+				"class_id": "1090",
+				"team_id": "36489",
+				"team_name": "GKV (H) F1",
+				"team_id_group": "36489,37317",
+				"url": ""
+			},
+			{
+				"c_team_id": "38417",
+				"season_year": "2014",
+				"season_serie": "",
+				"club_id": "NCX22S0",
+				"poule_id": "52515",
+				"sport_id": "KORFBALL-ZA-WK",
+				"c_team_name": "F2",
+				"c_team_name_basic": "F2",
+				"class_id": "1092",
+				"team_id": "38417",
+				"team_name": "GKV (H) F2",
+				"team_id_group": "38417,37616",
+				"url": ""
+			}
+		]
+	}
+}

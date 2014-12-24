@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web;
+using KNKVPlugin.Converters;
 using KNKVPlugin.Model;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace KNKVPlugin
 {
@@ -32,22 +31,8 @@ namespace KNKVPlugin
 			queryString["full"] = "0";
 
 			var response = Execute(queryString);
-
-			try
-			{
-				var jResponse = JArray.Parse(response);
-				var standings = new List<Poule>();
-
-				foreach (var row in jResponse)
-					standings.Add(JsonConvert.DeserializeObject<Poule>(row.ToString()));
-
-				return new ResponseResult<List<Poule>>(response, standings);
-			}
-			catch (JsonReaderException e)
-			{
-				// No valid JSON was recieved. Throw the ugly html error that the service is returning.
-				throw new ApplicationException(response, e);
-			}
+			var positions = PositionsConverter.Convert(response);
+			return positions;
 		}
 	}
 }
