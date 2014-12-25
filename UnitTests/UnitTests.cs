@@ -47,11 +47,11 @@ namespace UnitTests
 			var jsonResponse = GetEmbeddedResource("UnitTests.ExampleResponses.program.json");
 			var program = ProgramConverter.Convert(jsonResponse);
 
-			// Expecting 14 teams
-			Assert.AreEqual(14, program.Result.Matches.Count);
+			// Expecting 110 matches
+			Assert.AreEqual(110, program.Result.Matches.Count);
 
-			// Expecting results from only 1 week
-			Assert.AreEqual(1, program.Result.Weeks.Count);
+			// Expecting a program for 11 weeks
+			Assert.AreEqual(11, program.Result.Weeks.Count);
 		}
 
 
@@ -65,8 +65,8 @@ namespace UnitTests
 			var jsonResponse = GetEmbeddedResource("UnitTests.ExampleResponses.results.json");
 			var results = ResultsConverter.Convert(jsonResponse);
 
-			// Expecting 1 match result
-			Assert.AreEqual(1, results.Result.Matches.Count);
+			// Expecting 23 match result
+			Assert.AreEqual(23, results.Result.Matches.Count);
 		}
 
 
@@ -83,8 +83,8 @@ namespace UnitTests
 			// The raw response should be exactly the same as the input
 			Assert.AreEqual(jsonResponse, teams.RawResponse);
 
-			// Expecting 14 teams
-			Assert.AreEqual(14, teams.Result.List.Count);
+			// Expecting 15 teams
+			Assert.AreEqual(15, teams.Result.List.Count);
 		}
 
 
