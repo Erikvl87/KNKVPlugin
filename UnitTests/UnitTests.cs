@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Reflection;
 using KNKVPlugin;
 using KNKVPlugin.Converters;
@@ -30,10 +31,10 @@ namespace UnitTests
 		public void TestPositions()
 		{
 			var jsonResponse = GetEmbeddedResource("UnitTests.ExampleResponses.standings.json");
-			var positions = PositionsConverter.Convert(jsonResponse);
+			var positionsResponse = PositionsConverter.Convert(jsonResponse);
 
 			// Expecting 29 poule result objects
-			Assert.AreEqual(29, positions.Result.Count);
+			Assert.AreEqual(29, positionsResponse.Result.Count);
 		}
 
 
@@ -45,13 +46,13 @@ namespace UnitTests
 		public void TestProgram()
 		{
 			var jsonResponse = GetEmbeddedResource("UnitTests.ExampleResponses.program.json");
-			var program = ProgramConverter.Convert(jsonResponse);
+			var programResponse = ProgramConverter.Convert(jsonResponse);
 
 			// Expecting 110 matches
-			Assert.AreEqual(110, program.Result.Matches.Count);
+			Assert.AreEqual(110, programResponse.Result.Matches.Count);
 
 			// Expecting a program for 11 weeks
-			Assert.AreEqual(11, program.Result.Weeks.Count);
+			Assert.AreEqual(11, programResponse.Result.Weeks.Count);
 		}
 
 
@@ -63,10 +64,10 @@ namespace UnitTests
 		public void TestResults()
 		{
 			var jsonResponse = GetEmbeddedResource("UnitTests.ExampleResponses.results.json");
-			var results = ResultsConverter.Convert(jsonResponse);
+			var resultsResponse = ResultsConverter.Convert(jsonResponse);
 
 			// Expecting 23 match result
-			Assert.AreEqual(23, results.Result.Matches.Count);
+			Assert.AreEqual(23, resultsResponse.Result.Matches.Count);
 		}
 
 
@@ -78,13 +79,13 @@ namespace UnitTests
 		public void TestTeams()
 		{
 			var jsonResponse = GetEmbeddedResource("UnitTests.ExampleResponses.teams.json");
-			var teams = TeamsConverter.Convert(jsonResponse);
+			var teamsResponse = TeamsConverter.Convert(jsonResponse);
 			
 			// The raw response should be exactly the same as the input
-			Assert.AreEqual(jsonResponse, teams.RawResponse);
+			Assert.AreEqual(jsonResponse, teamsResponse.RawResponse);
 
 			// Expecting 15 teams
-			Assert.AreEqual(15, teams.Result.List.Count);
+			Assert.AreEqual(15, teamsResponse.Result.List.Count);
 		}
 
 
