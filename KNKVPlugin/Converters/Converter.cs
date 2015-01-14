@@ -1,11 +1,24 @@
 ﻿using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Converters;
 
 namespace KNKVPlugin.Converters
 {
 	public class Converter
 	{
+		public Converter()
+		{
+			JsonConvert.DefaultSettings = (() =>
+			{
+				var settings = new JsonSerializerSettings();
+				settings.Converters.Add(new StringEnumConverter { CamelCaseText = true });
+				return settings;
+			});
+		}
+
+
+
 		protected static JArray ParseArray(string json)
 		{
 			try

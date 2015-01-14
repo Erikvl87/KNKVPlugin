@@ -20,6 +20,18 @@
 				"team_id": "12880",
 				"team_name": "GKV (H) 1",
 				"team_id_group": "12880,31679",
+				"poules": [
+					{
+						"id": "50514",
+						"name": "2F",
+						"sport": "KORFBALL-VE-WK"
+					},
+					{
+						"id": "52289",
+						"name": "2G",
+						"sport": "KORFBALL-ZA-WK"
+					}
+				],
 				"url": ""
 			},
 			{
@@ -35,6 +47,18 @@
 				"team_id": "13312",
 				"team_name": "GKV (H) 2",
 				"team_id_group": "13312,29925",
+				"poules": [
+					{
+						"id": "50647",
+						"name": "R3M",
+						"sport": "KORFBALL-VE-WK"
+					},
+					{
+						"id": "52397",
+						"name": "R3Q",
+						"sport": "KORFBALL-ZA-WK"
+					}
+				],
 				"url": ""
 			},
 			{
@@ -50,6 +74,18 @@
 				"team_id": "13620",
 				"team_name": "GKV (H) 3",
 				"team_id_group": "13620,29789",
+				"poules": [
+					{
+						"id": "50669",
+						"name": "R4I",
+						"sport": "KORFBALL-VE-WK"
+					},
+					{
+						"id": "52322",
+						"name": "R4O",
+						"sport": "KORFBALL-ZA-WK"
+					}
+				],
 				"url": ""
 			},
 			{
@@ -65,6 +101,18 @@
 				"team_id": "13828",
 				"team_name": "GKV (H) 4",
 				"team_id_group": "13828,31434",
+				"poules": [
+					{
+						"id": "51158",
+						"name": "R6E",
+						"sport": "KORFBALL-VE-WK"
+					},
+					{
+						"id": "52506",
+						"name": "R6B",
+						"sport": "KORFBALL-ZA-WK"
+					}
+				],
 				"url": ""
 			}
 		]
@@ -88,6 +136,18 @@
 				"team_id": "32699",
 				"team_name": "GKV (H) A1",
 				"team_id_group": "32699,14333",
+				"poules": [
+					{
+						"id": "52421",
+						"name": "A2J",
+						"sport": "KORFBALL-ZA-WK"
+					},
+					{
+						"id": "50519",
+						"name": "A1E",
+						"sport": "KORFBALL-VE-WK"
+					}
+				],
 				"url": ""
 			},
 			{
@@ -103,6 +163,18 @@
 				"team_id": "14601",
 				"team_name": "GKV (H) A2",
 				"team_id_group": "14601,25374",
+				"poules": [
+					{
+						"id": "51034",
+						"name": "A5D",
+						"sport": "KORFBALL-VE-WK"
+					},
+					{
+						"id": "53219",
+						"name": "A4D",
+						"sport": "KORFBALL-ZA-WK"
+					}
+				],
 				"url": ""
 			}
 		]
@@ -126,6 +198,18 @@
 				"team_id": "14946",
 				"team_name": "GKV (H) B1",
 				"team_id_group": "14946,27310",
+				"poules": [
+					{
+						"id": "51118",
+						"name": "B4B",
+						"sport": "KORFBALL-VE-WK"
+					},
+					{
+						"id": "52483",
+						"name": "B4B",
+						"sport": "KORFBALL-ZA-WK"
+					}
+				],
 				"url": ""
 			},
 			{
@@ -141,6 +225,18 @@
 				"team_id": "32662",
 				"team_name": "GKV (H) C1",
 				"team_id_group": "32662,15598",
+				"poules": [
+					{
+						"id": "52538",
+						"name": "C3D",
+						"sport": "KORFBALL-ZA-WK"
+					},
+					{
+						"id": "51832",
+						"name": "C3J",
+						"sport": "KORFBALL-VE-WK"
+					}
+				],
 				"url": ""
 			}
 		]
@@ -169,6 +265,18 @@
 				"team_id": "30828",
 				"team_name": "GKV (H) D1",
 				"team_id_group": "30828,20352",
+				"poules": [
+					{
+						"id": "52545",
+						"name": "D1A",
+						"sport": "KORFBALL-ZA-WK"
+					},
+					{
+						"id": "51096",
+						"name": "D1D",
+						"sport": "KORFBALL-VE-WK"
+					}
+				],
 				"url": ""
 			},
 			{
@@ -184,6 +292,18 @@
 				"team_id": "24616",
 				"team_name": "GKV (H) D2",
 				"team_id_group": "24616,22999",
+				"poules": [
+					{
+						"id": "52548",
+						"name": "D2B",
+						"sport": "KORFBALL-ZA-WK"
+					},
+					{
+						"id": "51128",
+						"name": "D2H",
+						"sport": "KORFBALL-VE-WK"
+					}
+				],
 				"url": ""
 			},
 			{
@@ -199,6 +319,18 @@
 				"team_id": "42259",
 				"team_name": "GKV (H) D3",
 				"team_id_group": "42259,41776",
+				"poules": [
+					{
+						"id": "53654",
+						"name": "D2J",
+						"sport": "KORFBALL-ZA-WK"
+					},
+					{
+						"id": "51134",
+						"name": "D3J",
+						"sport": "KORFBALL-VE-WK"
+					}
+				],
 				"url": ""
 			},
 			{
@@ -214,6 +346,18 @@
 				"team_id": "20275",
 				"team_name": "GKV (H) E1",
 				"team_id_group": "20275,25657",
+				"poules": [
+					{
+						"id": "51865",
+						"name": "E2G",
+						"sport": "KORFBALL-VE-WK"
+					},
+					{
+						"id": "53385",
+						"name": "E2G",
+						"sport": "KORFBALL-ZA-WK"
+					}
+				],
 				"url": ""
 			},
 			{
@@ -229,6 +373,13 @@
 				"team_id": "21018",
 				"team_name": "GKV (H) E2",
 				"team_id_group": "21018",
+				"poules": [
+					{
+						"id": "53446",
+						"name": "E3N",
+						"sport": "KORFBALL-ZA-WK"
+					}
+				],
 				"url": ""
 			},
 			{
@@ -244,6 +395,18 @@
 				"team_id": "36489",
 				"team_name": "GKV (H) F1",
 				"team_id_group": "36489,37317",
+				"poules": [
+					{
+						"id": "51902",
+						"name": "F1J",
+						"sport": "KORFBALL-VE-WK"
+					},
+					{
+						"id": "53715",
+						"name": "F2H",
+						"sport": "KORFBALL-ZA-WK"
+					}
+				],
 				"url": ""
 			},
 			{
@@ -259,6 +422,18 @@
 				"team_id": "38417",
 				"team_name": "GKV (H) F2",
 				"team_id_group": "38417,37616",
+				"poules": [
+					{
+						"id": "52466",
+						"name": "F3D",
+						"sport": "KORFBALL-ZA-WK"
+					},
+					{
+						"id": "51098",
+						"name": "F3E",
+						"sport": "KORFBALL-VE-WK"
+					}
+				],
 				"url": ""
 			}
 		]

@@ -36,6 +36,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -54,6 +55,7 @@
     <Compile Include="Model\Program.cs" />
     <Compile Include="Model\Results.cs" />
     <Compile Include="Model\Positions.cs" />
+    <Compile Include="Model\Sport.cs" />
     <Compile Include="Model\Teams.cs" />
     <Compile Include="Model\Week.cs" />
     <Compile Include="GetPositions.cs" />

@@ -55,7 +55,8 @@ namespace KNKVPlugin
 			queryString["full"] = "0";
 
 			var response = Execute(queryString);
-			var results = ResultsConverter.Convert(response);
+			var converter = new ResultsConverter();
+			var results = converter.Convert(response);
 			return results;
 		}
 	}

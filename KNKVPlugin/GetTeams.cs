@@ -20,7 +20,8 @@ namespace KNKVPlugin
 			queryString["full"] = "0";
 
 			var response = Execute(queryString);
-			var teams = TeamsConverter.Convert(response);
+			var converter = new TeamsConverter();
+			var teams = converter.Convert(response);
 			return teams;
 		}
 	}

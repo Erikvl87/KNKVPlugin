@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Reflection;
 using KNKVPlugin;
 using KNKVPlugin.Converters;
@@ -31,7 +30,8 @@ namespace UnitTests
 		public void TestPositions()
 		{
 			var jsonResponse = GetEmbeddedResource("UnitTests.ExampleResponses.standings.json");
-			var positionsResponse = PositionsConverter.Convert(jsonResponse);
+			var converter = new PositionsConverter();
+			var positionsResponse = converter.Convert(jsonResponse);
 
 			// Expecting 29 poule result objects
 			Assert.AreEqual(29, positionsResponse.Result.Count);
@@ -46,13 +46,14 @@ namespace UnitTests
 		public void TestProgram()
 		{
 			var jsonResponse = GetEmbeddedResource("UnitTests.ExampleResponses.program.json");
-			var programResponse = ProgramConverter.Convert(jsonResponse);
+			var converter = new ProgramConverter();
+			var programResponse = converter.Convert(jsonResponse);
 
-			// Expecting 110 matches
-			Assert.AreEqual(110, programResponse.Result.Matches.Count);
+			// Expecting 13 matches
+			Assert.AreEqual(13, programResponse.Result.Matches.Count);
 
-			// Expecting a program for 11 weeks
-			Assert.AreEqual(11, programResponse.Result.Weeks.Count);
+			// Expecting a program for 1 week
+			Assert.AreEqual(1, programResponse.Result.Weeks.Count);
 		}
 
 
@@ -64,10 +65,11 @@ namespace UnitTests
 		public void TestResults()
 		{
 			var jsonResponse = GetEmbeddedResource("UnitTests.ExampleResponses.results.json");
-			var resultsResponse = ResultsConverter.Convert(jsonResponse);
+			var converter = new ResultsConverter();
+			var resultsResponse = converter.Convert(jsonResponse);
 
-			// Expecting 23 match result
-			Assert.AreEqual(23, resultsResponse.Result.Matches.Count);
+			// Expecting 17 match result
+			Assert.AreEqual(17, resultsResponse.Result.Matches.Count);
 		}
 
 
@@ -79,7 +81,8 @@ namespace UnitTests
 		public void TestTeams()
 		{
 			var jsonResponse = GetEmbeddedResource("UnitTests.ExampleResponses.teams.json");
-			var teamsResponse = TeamsConverter.Convert(jsonResponse);
+			var converter = new TeamsConverter();
+			var teamsResponse = converter.Convert(jsonResponse);
 			
 			// The raw response should be exactly the same as the input
 			Assert.AreEqual(jsonResponse, teamsResponse.RawResponse);

@@ -6,7 +6,7 @@ namespace KNKVPlugin.Converters
 {
 	public class ProgramConverter : Converter
 	{
-		public static ResponseResult<Program> Convert(string jsonResponse)
+		public ResponseResult<Program> Convert(string jsonResponse)
 		{
 			var jResponse = ParseObject(jsonResponse);
 			var weeks = new List<Week>();

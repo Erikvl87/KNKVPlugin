@@ -6,7 +6,7 @@ namespace KNKVPlugin.Converters
 {
 	public class PositionsConverter : Converter
 	{
-		public static ResponseResult<List<Poule>> Convert(string jsonResponse)
+		public ResponseResult<List<Poule>> Convert(string jsonResponse)
 		{
 			var jResponse = ParseArray(jsonResponse);
 			var standings = new List<Poule>();

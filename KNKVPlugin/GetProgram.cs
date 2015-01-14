@@ -60,7 +60,8 @@ namespace KNKVPlugin
 			queryString["full"] = (fullProgram) ? "1" : "0";
 
 			var response = Execute(queryString);
-			var program = ProgramConverter.Convert(response);
+			var converter = new ProgramConverter();
+			var program = converter.Convert(response);
 			return program;
 		}
 	}

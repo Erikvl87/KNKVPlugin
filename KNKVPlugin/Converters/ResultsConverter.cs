@@ -6,7 +6,7 @@ namespace KNKVPlugin.Converters
 {
 	public class ResultsConverter : Converter
 	{
-		public static ResponseResult<Results> Convert(string jsonResponse)
+		public ResponseResult<Results> Convert(string jsonResponse)
 		{
 			var jResponse = ParseObject(jsonResponse);
 

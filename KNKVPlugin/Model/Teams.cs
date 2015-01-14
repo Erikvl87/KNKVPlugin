@@ -48,6 +48,8 @@ namespace KNKVPlugin.Model
 		}
 	}
 
+
+
 	public class Category
 	{
 		[JsonProperty(PropertyName = "v")]
@@ -55,8 +57,21 @@ namespace KNKVPlugin.Model
 	}
 
 
+
 	public class Team
 	{
+		public class Poule
+		{
+			[JsonProperty(PropertyName = "id")]
+			public readonly int Id;
+
+			[JsonProperty(PropertyName = "name")]
+			public readonly string Name;
+
+			[JsonProperty(PropertyName = "sport")]
+			public readonly Sport Sport;
+		}
+
 		[JsonProperty(PropertyName = "season_year")]
 		public readonly int SeasonYear;
 
@@ -69,8 +84,11 @@ namespace KNKVPlugin.Model
 		[JsonProperty(PropertyName = "poule_id")]
 		public readonly int PouleId;
 
+		[JsonProperty(PropertyName = "poules")]
+		public readonly List<Poule> Poules;
+
 		[JsonProperty(PropertyName = "sport_id")]
-		public readonly string SportId;
+		public readonly Sport Sport;
 
 		[JsonProperty(PropertyName = "c_team_name_basic")]
 		public readonly string TeamNameBasic;

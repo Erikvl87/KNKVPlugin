@@ -31,7 +31,8 @@ namespace KNKVPlugin
 			queryString["full"] = "0";
 
 			var response = Execute(queryString);
-			var positions = PositionsConverter.Convert(response);
+			var converter = new PositionsConverter();
+			var positions = converter.Convert(response);
 			return positions;
 		}
 	}
