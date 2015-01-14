@@ -82,7 +82,7 @@ namespace KNKVPlugin.Model
 		public readonly string Draw;
 
 		[JsonProperty(PropertyName = "sport")]
-		public readonly Sport sport;
+		public readonly Sport Sport;
 
 		[JsonProperty(PropertyName = "serie")]
 		public readonly string Serie;
