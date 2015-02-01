@@ -14,8 +14,9 @@ namespace KNKVPlugin
 		/// <returns></returns>
 		public ResponseResult<Results> GetResults()
 		{
-			return GetResults(null, 0);
+			return GetResults(null, 0, false);
 		}
+
 
 
 		/// <summary>
@@ -25,19 +26,34 @@ namespace KNKVPlugin
 		/// <returns></returns>
 		public ResponseResult<Results> GetResults(int paging)
 		{
-			return GetResults(null, paging);
+			return GetResults(null, paging, false);
 		}
+
 
 
 		/// <summary>
-		/// Returns poule results for the given teams
+		/// todo
+		/// </summary>
+		/// <param name="allResults"></param>
+		/// <returns></returns>
+		public ResponseResult<Results> GetResults(bool allResults)
+		{
+			return GetResults(null, 0, allResults);
+		}
+
+
+
+		/// <summary>
+		/// Returns poule results for the given teams, optionally retrieve the fullProgram
 		/// </summary>
 		/// <param name="teamIds"></param>
+		/// <param name="allResults"></param>
 		/// <returns></returns>
-		public ResponseResult<Results> GetResults(int[] teamIds)
+		public ResponseResult<Results> GetResults(int[] teamIds, bool allResults = false)
 		{
-			return GetResults(teamIds, 0);
+			return GetResults(teamIds, 0, allResults);
 		}
+
 
 
 		/// <summary>
@@ -45,14 +61,15 @@ namespace KNKVPlugin
 		/// </summary>
 		/// <param name="teamIds"></param>
 		/// <param name="paging"></param>
+		/// <param name="allResults"></param>
 		/// <returns></returns>
-		public ResponseResult<Results> GetResults(int[] teamIds, int paging)
+		public ResponseResult<Results> GetResults(int[] teamIds, int paging, bool allResults = false)
 		{
 			var queryString = HttpUtility.ParseQueryString(String.Empty);
 			queryString["t"] = "result";
 			queryString["t_id"] = (teamIds != null) ? String.Join(",", teamIds) : String.Empty;
 			queryString["p"] = paging.ToString(CultureInfo.InvariantCulture);
-			queryString["full"] = "0";
+			queryString["full"] = (allResults) ? "1" : "0";
 
 			var response = Execute(queryString);
 			var converter = new ResultsConverter();
