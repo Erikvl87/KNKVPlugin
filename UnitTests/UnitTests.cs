@@ -49,8 +49,8 @@ namespace UnitTests
 			var converter = new ProgramConverter();
 			var programResponse = converter.Convert(jsonResponse);
 
-			// Expecting 13 matches
-			Assert.AreEqual(13, programResponse.Result.Matches.Count);
+			// Expecting 15 matches
+			Assert.AreEqual(15, programResponse.Result.Matches.Count);
 
 			// Expecting a program for 1 week
 			Assert.AreEqual(1, programResponse.Result.Weeks.Count);
@@ -68,8 +68,8 @@ namespace UnitTests
 			var converter = new ResultsConverter();
 			var resultsResponse = converter.Convert(jsonResponse);
 
-			// Expecting 17 match result
-			Assert.AreEqual(17, resultsResponse.Result.Matches.Count);
+			// Expecting 16 match result
+			Assert.AreEqual(16, resultsResponse.Result.Matches.Count);
 		}
 
 

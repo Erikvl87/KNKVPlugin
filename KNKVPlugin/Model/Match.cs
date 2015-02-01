@@ -34,6 +34,9 @@ namespace KNKVPlugin.Model
 		[JsonProperty(PropertyName = "match_officials")]
 		public readonly string MatchOfficials;
 
+		[JsonProperty(PropertyName = "poule_id")]
+		public readonly string PouleId;
+
 		[JsonProperty(PropertyName = "poule_name")]
 		public readonly string PouleName;
 
