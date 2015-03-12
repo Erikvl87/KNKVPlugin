@@ -2,17 +2,16 @@
 using System.Reflection;
 using KNKVPlugin;
 using KNKVPlugin.Converters;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using NUnit.Framework;
 namespace UnitTests
 {
-	[TestClass]
+	[TestFixture]
 	public class UnitTests
 	{
 		/// <summary>
 		/// Test if the url is valid
 		/// </summary>
-		[TestMethod]
+		[Test]
 		public void TestRequestUrl()
 		{
 			const string expectedRequestUrl = "http://www.knkv.nl/kcp/abc/json/";
@@ -26,7 +25,7 @@ namespace UnitTests
 		/// <summary>
 		/// 
 		/// </summary>
-		[TestMethod]
+		[Test]
 		public void TestPositions()
 		{
 			var jsonResponse = GetEmbeddedResource("UnitTests.ExampleResponses.standings.json");
@@ -42,7 +41,7 @@ namespace UnitTests
 		/// <summary>
 		/// 
 		/// </summary>
-		[TestMethod]
+		[Test]
 		public void TestProgram()
 		{
 			var jsonResponse = GetEmbeddedResource("UnitTests.ExampleResponses.program.json");
@@ -61,7 +60,7 @@ namespace UnitTests
 		/// <summary>
 		/// 
 		/// </summary>
-		[TestMethod]
+		[Test]
 		public void TestResults()
 		{
 			var jsonResponse = GetEmbeddedResource("UnitTests.ExampleResponses.results.json");
@@ -77,7 +76,7 @@ namespace UnitTests
 		/// <summary>
 		/// 
 		/// </summary>
-		[TestMethod]
+		[Test]
 		public void TestTeams()
 		{
 			var jsonResponse = GetEmbeddedResource("UnitTests.ExampleResponses.teams.json");
