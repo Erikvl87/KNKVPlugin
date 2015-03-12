@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/Erikvl87/KNKVPlugin.svg?branch=master)](https://travis-ci.org/Erikvl87/KNKVPlugin)
 [![NuGet](http://img.shields.io/nuget/v/KNKVPlugin.svg?style=flat-square)](https://www.nuget.org/packages/KNKVPlugin/)
 [![Downloads](http://img.shields.io/nuget/dt/KNKVPlugin.svg?style=flat-square)](https://www.nuget.org/packages/KNKVPlugin/)
 KNKVPlugin
