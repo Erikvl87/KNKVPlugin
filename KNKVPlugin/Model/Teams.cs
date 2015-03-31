@@ -12,14 +12,32 @@ namespace KNKVPlugin.Model
 		[JsonProperty(PropertyName = "Senioren")]
 		public readonly Category Senioren;
 
+		[JsonProperty(PropertyName = "Senioren Dames")]
+		public readonly Category SeniorenDames;
+
 		[JsonProperty(PropertyName = "Junioren")]
 		public readonly Category Junioren;
+
+		[JsonProperty(PropertyName = "Junioren Dames")]
+		public readonly Category JuniorenDames;
 
 		[JsonProperty(PropertyName = "Aspiranten")]
 		public readonly Category Aspiranten;
 
+		[JsonProperty(PropertyName = "Aspiranten Dames")]
+		public readonly Category AspirantenDames;
+
 		[JsonProperty(PropertyName = "Pupillen")]
 		public readonly Category Pupillen;
+
+		[JsonProperty(PropertyName = "Pupillen Dames")]
+		public readonly Category PupillenDames;
+
+		[JsonProperty(PropertyName = "Welpen")]
+		public readonly Category Welpen;
+
+		[JsonProperty(PropertyName = "Welpen Dames")]
+		public readonly Category WelpenDames;
 
 		public IEnumerator<Team> GetEnumerator()
 		{
@@ -37,10 +55,35 @@ namespace KNKVPlugin.Model
 		[OnDeserialized]
 		void CreateList(StreamingContext sc)
 		{
-			List.AddRange(Senioren.Teams);
-			List.AddRange(Junioren.Teams);
+			if (Senioren != null)
+				List.AddRange(Senioren.Teams);
+
+			if (SeniorenDames != null)
+				List.AddRange(SeniorenDames.Teams);
+
+			if (Junioren != null)
+				List.AddRange(Junioren.Teams);
+
+			if (JuniorenDames != null)
+				List.AddRange(JuniorenDames.Teams);
+
+			if (Aspiranten != null)
 			List.AddRange(Aspiranten.Teams);
-			List.AddRange(Pupillen.Teams);
+
+			if (AspirantenDames != null)
+				List.AddRange(AspirantenDames.Teams);
+
+			if (Pupillen != null)
+				List.AddRange(Pupillen.Teams);
+
+			if (PupillenDames != null)
+				List.AddRange(PupillenDames.Teams);
+
+			if (Welpen != null)
+				List.AddRange(Welpen.Teams);
+
+			if (WelpenDames != null)
+				List.AddRange(WelpenDames.Teams);
 
 			var firstTeamElement = List.FirstOrDefault();
 			if (firstTeamElement != null)
