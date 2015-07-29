@@ -50,6 +50,7 @@
     <Compile Include="Converters\ResultsConverter.cs" />
     <Compile Include="Converters\ProgramConverter.cs" />
     <Compile Include="Converters\PositionsConverter.cs" />
+    <Compile Include="Exceptions\SerializationException.cs" />
     <Compile Include="Model\Facility.cs" />
     <Compile Include="Model\Match.cs" />
     <Compile Include="Model\Program.cs" />

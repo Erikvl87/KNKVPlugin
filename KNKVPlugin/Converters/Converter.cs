@@ -1,4 +1,5 @@
 ﻿using System;
+using KNKVPlugin.Exceptions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Converters;
@@ -62,6 +63,12 @@ namespace KNKVPlugin.Converters
 			{
 				// No valid JSON was recieved. Throw the ugly html error that the service is returning.
 				throw new ApplicationException(json, e);
+			}
+			catch (JsonSerializationException e)
+			{
+				// The jSON contains unexpected data.
+				throw new SerializationException("Unexpected JSON data received.", e, json);
+
 			}
 		}
 	}
