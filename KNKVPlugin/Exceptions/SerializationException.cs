@@ -2,7 +2,7 @@
 
 namespace KNKVPlugin.Exceptions
 {
-	class SerializationException : Exception
+	public class SerializationException : Exception
 	{
 		public string Json { get; private set; }
 
