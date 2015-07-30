@@ -112,7 +112,7 @@ namespace KNKVPlugin.Model
 			public readonly string Name;
 
 			[JsonProperty(PropertyName = "sport")]
-			public readonly Sport Sport;
+			public readonly string Sport;
 		}
 
 		[JsonProperty(PropertyName = "season_year")]
@@ -131,7 +131,7 @@ namespace KNKVPlugin.Model
 		public readonly List<Poule> Poules;
 
 		[JsonProperty(PropertyName = "sport_id")]
-		public readonly Sport Sport;
+		public readonly string Sport;
 
 		[JsonProperty(PropertyName = "c_team_name_basic")]
 		public readonly string TeamNameBasic;

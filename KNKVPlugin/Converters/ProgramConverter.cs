@@ -11,7 +11,7 @@ namespace KNKVPlugin.Converters
 			var jResponse = ParseObject(jsonResponse);
 			var weeks = new List<Week>();
 			foreach (var row in jResponse)
-				weeks.Add(JsonConvert.DeserializeObject<Week>(row.Value.ToString()));
+				weeks.Add(DeserializeObject<Week>(row.Value.ToString()));
 
 			return new ResponseResult<Program>(jsonResponse, new Program(weeks));
 		}

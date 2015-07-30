@@ -16,7 +16,7 @@ namespace KNKVPlugin.Model
 			public readonly string PouleName;
 
 			[JsonProperty(PropertyName = "sport")]
-			public readonly Sport Sport;
+			public readonly string Sport;
 		}
 
 
@@ -46,7 +46,7 @@ namespace KNKVPlugin.Model
 
 		public string PouleId { get; private set; }
 		public string PouleName { get; private set; }
-		public Sport Sport { get; private set; }
+		public string Sport { get; private set; }
 	}
 
 
@@ -82,7 +82,7 @@ namespace KNKVPlugin.Model
 		public readonly string Draw;
 
 		[JsonProperty(PropertyName = "sport")]
-		public readonly Sport Sport;
+		public readonly string Sport;
 
 		[JsonProperty(PropertyName = "serie")]
 		public readonly string Serie;

@@ -12,7 +12,7 @@ namespace KNKVPlugin.Converters
 			var standings = new List<Poule>();
 
 			foreach (var row in jResponse)
-				standings.Add(JsonConvert.DeserializeObject<Poule>(row.ToString()));
+				standings.Add(DeserializeObject<Poule>(row.ToString()));
 
 			return new ResponseResult<List<Poule>>(jsonResponse, standings);
 			
