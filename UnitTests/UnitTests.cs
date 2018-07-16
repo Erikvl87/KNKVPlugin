@@ -14,7 +14,7 @@ namespace UnitTests
 		[Test]
 		public void TestRequestUrl()
 		{
-			const string expectedRequestUrl = "http://www.knkv.nl/kcp/abc/json/";
+			const string expectedRequestUrl = "https://www.knkv.nl/kcp/abc/json/";
 			var request = new Request("abc");
 			var actualRequestUrl = request.ServiceUrl;
 			Assert.AreEqual(expectedRequestUrl, actualRequestUrl);

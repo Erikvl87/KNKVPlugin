@@ -16,7 +16,7 @@ namespace KNKVPlugin
 		/// <param name="code"></param>
 		public Request(string code)
 		{
-			ServiceUrl = String.Format("http://www.knkv.nl/kcp/{0}/json/", code);
+			ServiceUrl = $"https://www.knkv.nl/kcp/{code}/json/";
 		}
 
 
